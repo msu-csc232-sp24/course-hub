@@ -30,9 +30,15 @@ message("CMAKE_CXX_FLAGS =${CMAKE_CXX_FLAGS}")
 set(CMAKE_CXX_STANDARD 14)
 
 # Source sets for targets
-set(SRC_MAIN_FILES src/main/cpp/main.cpp)
-set(SRC_DEMO_FILES src/main/cpp/demo.cpp)
-set(SRC_TEST_FILES src/test/cpp/unit_tests.cpp)
+set(SRC_MAIN_FILES
+        src/main/cpp/ArrayBag.cpp
+        src/main/cpp/main.cpp)
+set(SRC_DEMO_FILES
+        src/main/cpp/ArrayBag.cpp
+        src/main/cpp/demo.cpp)
+set(SRC_TEST_FILES
+        src/main/cpp/ArrayBag.cpp
+        src/test/cpp/unit_tests.cpp)
 
 # Setup Catch2 Unit-testing Framework
 Include(FetchContent)
@@ -54,7 +60,7 @@ target_link_libraries(tests PRIVATE Catch2::Catch2WithMain)
 target_include_directories(main PUBLIC ${CMAKE_CURRENT_LIST_DIR}/include ${CMAKE_CURRENT_LIST_DIR}/src/main/cpp)
 target_include_directories(demo PUBLIC ${CMAKE_CURRENT_LIST_DIR}/include ${CMAKE_CURRENT_LIST_DIR}/src/main/cpp)
 target_include_directories(tests PUBLIC ${CMAKE_CURRENT_LIST_DIR}/include ${CMAKE_CURRENT_LIST_DIR}/src/main/cpp)
-
+message("${CMAKE_CURRENT_LIST_DIR}")
 include(CTest)
 include(Catch)
 enable_testing()
