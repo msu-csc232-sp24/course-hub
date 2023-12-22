@@ -33,8 +33,12 @@ bool ArrayBag< ItemType >::remove( const ItemType & anEntry )
 {
     int locatedIndex = getIndexOf(anEntry);
     bool canRemove = (!(isEmpty()) && (locatedIndex > -1));
-
-    return false;
+    if (canRemove)
+    {
+        itemCount -= 1;
+        items[locatedIndex] = items[itemCount];
+    }
+    return canRemove;
 }
 
 template< typename ItemType >
