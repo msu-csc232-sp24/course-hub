@@ -21,6 +21,8 @@ int main(int argc, char* argv[])
     Bag<int>* bag = new ArrayBag<int>();
     int entry{ 5 };
     bool success = bag->add(entry);
+    entry = 6;
+    success = bag->add(entry);
     success = bag->remove(entry);
 
     delete bag;

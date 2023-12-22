@@ -27,17 +27,14 @@ endif ()
 # echo CMAKE_CXX_FLAGS
 message("CMAKE_CXX_FLAGS =${CMAKE_CXX_FLAGS}")
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 11)
 
 # Source sets for targets
 set(SRC_MAIN_FILES
-        src/main/cpp/ArrayBag.cpp
         src/main/cpp/main.cpp)
 set(SRC_DEMO_FILES
-        src/main/cpp/ArrayBag.cpp
         src/main/cpp/demo.cpp)
 set(SRC_TEST_FILES
-        src/main/cpp/ArrayBag.cpp
         src/test/cpp/unit_tests.cpp)
 
 # Setup Catch2 Unit-testing Framework

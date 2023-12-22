@@ -29,6 +29,28 @@ bool ArrayBag< ItemType >::add( const ItemType & newEntry )
 }
 
 template< typename ItemType >
+int ArrayBag< ItemType >::getIndexOf( const ItemType & target ) const
+{
+    bool isFound{ false };
+    int result{ -1 };
+    int searchIndex{ 0 };
+    // if bag is empty, itemCount is zero, so loop is skipped
+    while ( !isFound && searchIndex < itemCount )
+    {
+        isFound = ( items[ searchIndex ] == target );
+        if ( isFound )
+        {
+            result = searchIndex;
+        }
+        else
+        {
+            searchIndex += 1;
+        }
+    }
+    return result;
+}
+
+template< typename ItemType >
 bool ArrayBag< ItemType >::remove( const ItemType & anEntry )
 {
     int locatedIndex = getIndexOf(anEntry);
@@ -99,26 +121,4 @@ template< typename ItemType >
 int ArrayBag< ItemType >::getCurrentSize( ) const
 {
     return itemCount;
-}
-
-template< typename ItemType >
-int ArrayBag< ItemType >::getIndexOf( const ItemType & target ) const
-{
-    bool isFound{ false };
-    int result{ -1 };
-    int searchIndex{ 0 };
-    // if bag is empty, itemCount is zero, so loop is skipped
-    while ( !isFound && searchIndex < itemCount )
-    {
-        isFound = ( items[ searchIndex ] == target );
-        if ( isFound )
-        {
-            result = searchIndex;
-        }
-        else
-        {
-            searchIndex += 1;
-        }
-    }
-    return result;
 }
