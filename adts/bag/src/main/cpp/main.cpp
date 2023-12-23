@@ -12,10 +12,20 @@
  */
 
 #include "csc232.h"
+#include "bag.h"
+#include "ArrayBag.h"
 
 int main(int argc, char* argv[])
 {
     std::cout << "Hello, Main Target!" << std::endl;
+    Bag<int>* bag = new ArrayBag<int>();
+    int entry{ 5 };
+    bool success = bag->add(entry);
+    entry = 6;
+    success = bag->add(entry);
+    success = bag->remove(entry);
 
+    delete bag;
+    bag = nullptr;
     return EXIT_SUCCESS;
 }

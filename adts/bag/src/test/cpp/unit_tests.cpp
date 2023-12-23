@@ -12,7 +12,6 @@
  */
 
 #include <catch2/catch_test_macros.hpp>
-#include <catch2/catch_session.hpp>
 #include "csc232.h"
 
 #if EXECUTE_BLOCK
@@ -60,29 +59,40 @@ SCENARIO("Capturing standard output in a test", "[capture]")
 #endif
 
 #if FINISHED_PART_1
-SCENARIO("Evaluate Code for Task 1", "[task1]") {
-    GIVEN("Some pre-conditions") {
+
+SCENARIO( "Evaluate Code for Task 1", "[task1]" )
+{
+    GIVEN( "Some pre-conditions" )
+    {
         // declare any objects needed to satisfy preconditions
+        Bag<int>* intBag = new ArrayBag<int>{};
 
-        WHEN("Some stimulus occurs") {
+        WHEN( "Some stimulus occurs" )
+        {
             // invoke said stimulus
+            auto response = intBag->isEmpty();
 
-            THEN("Validate any post-conditions") {
-                REQUIRE(true == true);
+            THEN( "Validate any post-conditions" )
+            {
+                REQUIRE(response);
             }
         }
     }
 
-    GIVEN("Another set of pre-conditions") {
+    GIVEN( "Another set of pre-conditions" )
+    {
         // declare objects needed for this different set of preconditions
 
-        WHEN("Some other stimulus occurs") {
-            THEN("Validate any new post-conditions") {
-                REQUIRE(true == true);
+        WHEN( "Some other stimulus occurs" )
+        {
+            THEN( "Validate any new post-conditions" )
+            {
+                REQUIRE( true == true );
             }
         }
     }
 }
+
 #else
 SCENARIO("Bootstrap - If you see this, you haven't done anything yet!", "[bootstrap]")
 {
