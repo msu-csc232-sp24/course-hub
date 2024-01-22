@@ -66,7 +66,7 @@ bool ArrayBag< ItemType >::remove( const ItemType & anEntry )
 template< typename ItemType >
 void ArrayBag< ItemType >::clear( )
 {
-
+    itemCount = 0;
 }
 
 template< typename ItemType >
