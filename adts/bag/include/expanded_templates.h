@@ -12,4 +12,10 @@
 
 /* Include class template implementation files as needed */
 
+#include <string>
+#include "ArrayBag.cpp"
+
+template class ArrayBag<int>;
+template class ArrayBag<std::string>;
+
 #endif // CSC232_EXPANDED_TEMPLATES_H_
